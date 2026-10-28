@@ -1,0 +1,56 @@
+.cta-container {
+  position: relative;
+  padding-top: 28px;
+  padding-bottom: 120px;
+  background:
+    linear-gradient(180deg, rgba(0, 12, 60, 0.15), rgba(0, 12, 60, 0.35)),
+    url("/media/hero-bg.png") center / cover no-repeat;
+}
+
+.cta-container::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 150px;
+  background: url("/media/pattern-2.png") center bottom / 100% auto no-repeat;
+  pointer-events: none;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta h2 {
+  color: var(--lime);
+  font-size: 26px;
+  font-stretch: 125%;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.cta-inner > p:not(.button-wrapper) {
+  margin-top: 2px;
+  font-size: 26px;
+  font-stretch: 125%;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.cta .button-wrapper {
+  margin-top: 28px;
+}
+
+@media (max-width: 700px) {
+  .cta h2,
+  .cta-inner > p:not(.button-wrapper) {
+    font-size: 20px;
+  }
+}

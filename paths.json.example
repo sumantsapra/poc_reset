@@ -1,0 +1,9 @@
+{
+  "mappings": [
+    "/content/reset/:/",
+    "/content/dam/reset/:/media/"
+  ],
+  "includes": [
+    "/content/reset/"
+  ]
+}
