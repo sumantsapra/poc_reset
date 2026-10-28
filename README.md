@@ -2,7 +2,13 @@
 
 Adobe Edge Delivery Services rebuild of [tennispartner.com.au/reset](https://tennispartner.com.au/reset).
 
-This is a single page. The navigation matches the live Framer site and points Home, Agenda, Speakers, and Register now at AO Exchange. The prize form is the same Typeform (`wcPNpVJ2`). Contact us opens `newpartnerships@tennis.com.au`.
+Pages:
+
+- `/` prize draw (Typeform `wcPNpVJ2`) and the six brand cards. Contact us opens `newpartnerships@tennis.com.au`.
+- `/agenda` the AO Exchange programme for 21 January 2027.
+- `/speakers` headline and featured speakers.
+
+Navigation stays on this site. Register now returns to the prize form on the home page.
 
 ## Preview locally
 
@@ -20,7 +26,7 @@ Use the same GitHub account that hosts AO Exchange. That account can install the
 2. Push this project to `main`.
 3. Install [AEM Code Sync](https://github.com/apps/aem-code-sync/installations/new) on that account only, limited to this repository. Leave the content step empty if the wizard asks.
 4. Confirm the code bus: `https://main--reset--OWNER.aem.page/scripts/aem.js` should return JavaScript. `OWNER` is the GitHub account name, in lowercase.
-5. Open `https://main--reset--OWNER.aem.page/`. The first view is the Document Authoring starter page. Replace the home document with `content/home.html`, set the title to **Find your play** and the description to the line in `head.html`, then Preview.
+5. Open `https://main--reset--OWNER.aem.page/`. The first view is the Document Authoring starter page. Replace the home document with `content/home.html`, set the title to **Find your play** and the description to the line in `head.html`, then Preview. Create `agenda` and `speakers` documents from `content/agenda.html` and `content/speakers.html` and Preview those too.
 6. Publish when the preview looks right. The live host is `https://main--reset--OWNER.aem.live/`.
 
 Images in `/media` are served from this repository. The page references them as `/media/...`.

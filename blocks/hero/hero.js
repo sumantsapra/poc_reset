@@ -15,6 +15,7 @@ export default function decorate(block) {
   if (!formRow || !link) return;
 
   formRow.className = 'hero-form';
+  formRow.id = 'form';
   const frame = document.createElement('iframe');
   frame.className = 'hero-typeform';
   frame.src = link.href;

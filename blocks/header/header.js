@@ -1,24 +1,28 @@
-const EXCHANGE = 'https://tennispartner.com.au/ao-exchange';
-
 const LINKS = [
-  { href: EXCHANGE, label: 'Home' },
-  { href: `${EXCHANGE}/agenda`, label: 'Agenda' },
-  { href: `${EXCHANGE}/speakers`, label: 'Speakers' },
+  { href: '/', label: 'Home' },
+  { href: '/agenda', label: 'Agenda' },
+  { href: '/speakers', label: 'Speakers' },
 ];
 
+function currentPath() {
+  const path = window.location.pathname.replace(/\/index\.html$/, '').replace(/\.html$/, '');
+  if (path.length > 1 && path.endsWith('/')) return path.slice(0, -1);
+  return path || '/';
+}
+
 /**
- * Builds the fixed pill navigation. Links match the live Reset page,
- * which points Home, Agenda, Speakers and Register now at AO Exchange.
+ * Builds the fixed pill navigation used on every page.
  * @param {Element} block Header block
  */
 export default function decorate(block) {
+  const path = currentPath();
   const nav = document.createElement('nav');
   nav.className = 'nav-pill';
   nav.setAttribute('aria-label', 'Australian Open');
 
   const brand = document.createElement('a');
   brand.className = 'nav-brand';
-  brand.href = EXCHANGE;
+  brand.href = '/';
   brand.innerHTML = '<img src="/media/ao-logo.png" alt="Australian Open">';
 
   const links = document.createElement('div');
@@ -33,12 +37,13 @@ export default function decorate(block) {
     const a = document.createElement('a');
     a.href = item.href;
     a.textContent = item.label;
+    if (item.href === path) a.setAttribute('aria-current', 'page');
     links.append(a);
   });
 
   const cta = document.createElement('a');
   cta.className = 'nav-cta';
-  cta.href = `${EXCHANGE}#form`;
+  cta.href = '/#form';
   cta.textContent = 'Register now';
 
   const toggle = document.createElement('button');

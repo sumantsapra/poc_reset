@@ -6,6 +6,7 @@
   --ink: #000c3c;
   --pill: rgba(246, 246, 246, 0.78);
   --font-display: "Sequel Sans", "Anybody", "Arial Narrow", Impact, sans-serif;
+  --font-ui: "Poppins", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
   --nav-height: 96px;
   --page-pad: 30px;
@@ -75,6 +76,24 @@ main {
 .cta-container {
   padding-right: 0;
   padding-left: 0;
+}
+
+.agenda-container,
+.speakers-container {
+  position: relative;
+}
+
+.agenda-container::before,
+.speakers-container::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 140px;
+  background: url("/media/torn.png") center top / 100% auto no-repeat;
+  pointer-events: none;
 }
 
 .hero-container > div,
