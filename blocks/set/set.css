@@ -8,59 +8,85 @@
   max-width: none;
 }
 
-.set-hero,
-.set-index,
-.set-game,
-.set-close {
-  width: min(1200px, calc(100% - 80px));
-  margin-right: auto;
-  margin-left: auto;
+.set-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 120px 8vw 80px;
+  overflow: hidden;
 }
 
-.set-hero {
-  padding-top: 150px;
+.set-photo,
+.set-photo picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .set-photo img {
-  display: block;
   width: 100%;
-  height: 420px;
+  height: 100%;
   object-fit: cover;
 }
 
+.set-hero-copy {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, 100%);
+  text-align: center;
+}
+
 .set-title {
-  max-width: 8ch;
-  margin: 28px 0 0;
-  font-size: clamp(72px, 11vw, 120px);
+  max-width: 9ch;
+  margin: 0 auto;
+  color: #fff;
+  font-size: clamp(64px, 8.4vw, 120px);
   font-stretch: 150%;
   font-weight: 700;
-  line-height: 0.82;
+  line-height: 0.85;
   letter-spacing: -0.03em;
   text-transform: uppercase;
 }
 
 .set-line {
-  max-width: 16ch;
   margin: 28px 0 0;
-  font-size: clamp(32px, 4vw, 48px);
-  font-stretch: 150%;
-  font-weight: 700;
-  line-height: 0.95;
-  text-transform: uppercase;
+  color: #fff;
+  font-size: clamp(22px, 2vw, 28px);
+  font-stretch: 125%;
+  font-weight: 500;
+  line-height: 1.15;
 }
 
 .set-kicker {
-  margin: 18px 0 0;
-  font-size: 16px;
+  margin: 14px 0 0;
+  color: #fff;
+  font-size: 12px;
   font-stretch: 125%;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.set-intro-band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 72vh;
+  padding: 80px 16vw;
+  background: #000c3c url("/media/cs-intro.jpg") center / cover no-repeat;
+  color: #fff;
+  text-align: center;
 }
 
 .set-intro {
   max-width: 68ch;
-  margin: 16px 0 0;
+  margin: 0;
   font-family: var(--font-ui);
   font-size: 18px;
   font-stretch: 100%;
@@ -69,56 +95,82 @@
 }
 
 .set-index {
-  margin-top: 72px;
+  padding: 88px 7vw 72px;
+  background: #000c3c url("/media/cs-cards.jpg") center / cover no-repeat;
+  color: #fff;
 }
 
 .set-index-label {
-  margin: 0 0 8px;
-  font-size: 14px;
+  margin: 0;
+  font-size: 12px;
   font-stretch: 125%;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .set-index ol {
-  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 28px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .set-index a {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 16px;
-  align-items: baseline;
-  padding: 22px 0;
-  border-top: 1px solid rgba(0, 12, 60, 0.18);
-  color: inherit;
-  font-size: clamp(22px, 3vw, 36px);
-  font-stretch: 150%;
-  font-weight: 700;
-  line-height: 0.95;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 300px;
+  padding: 22px;
+  background-color: rgba(0, 12, 60, 0.45);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
   text-decoration: none;
-  text-transform: uppercase;
-}
-
-.set-index li:last-child a {
-  border-bottom: 1px solid rgba(0, 12, 60, 0.18);
 }
 
 .set-index a span:first-child {
-  color: #00afff;
-  font-size: 40px;
+  font-size: 70px;
+  font-stretch: 150%;
+  font-weight: 700;
+  line-height: 0.85;
+}
+
+.set-index a span:last-child {
+  margin-top: 10px;
+  font-size: 22px;
+  font-stretch: 125%;
+  font-weight: 500;
+  line-height: 1.1;
 }
 
 .set-game {
-  scroll-margin-top: 120px;
+  padding: 72px 7vw;
+  scroll-margin-top: 110px;
+  background: #f6f6f6;
+}
+
+.set-layout {
   display: grid;
-  grid-template-columns: minmax(240px, 0.85fr) 1.15fr;
-  gap: 36px;
-  align-items: start;
-  padding: 72px 0;
-  border-top: 1px solid rgba(0, 12, 60, 0.18);
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+.set-game.is-flip .set-photos {
+  order: 2;
+}
+
+.set-photos img {
+  display: block;
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
 }
 
 .set-label {
@@ -132,8 +184,8 @@
 }
 
 .set-game-title {
-  margin: 10px 0 0;
-  font-size: clamp(32px, 4vw, 52px);
+  margin: 8px 0 0;
+  font-size: clamp(32px, 3.4vw, 44px);
   font-stretch: 150%;
   font-weight: 700;
   line-height: 0.92;
@@ -143,28 +195,28 @@
 .set-body {
   margin: 16px 0 0;
   font-family: var(--font-ui);
-  font-size: 17px;
+  font-size: 18px;
   font-stretch: 100%;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .set-move {
   margin: 28px 0 0;
-  padding: 22px 24px;
-  background: #000c3c;
+  padding: 56px 28px 28px;
+  min-height: 220px;
+  background: url("/media/cs-move.png") center / cover no-repeat;
   color: #fff;
   font-family: var(--font-ui);
-  font-size: 18px;
+  font-size: 22px;
   font-stretch: 100%;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.25;
 }
 
 .set-move span {
   display: block;
-  margin-bottom: 8px;
-  color: #00afff;
+  margin-bottom: 10px;
   font-family: var(--font-display);
   font-size: 13px;
   font-stretch: 125%;
@@ -174,15 +226,13 @@
 }
 
 .set-close {
-  width: 100%;
-  max-width: none;
-  margin-top: 12px;
-  padding: 88px max(40px, calc((100% - 1200px) / 2)) 96px;
+  padding: 96px 8vw 108px;
   background: #000c3c;
   color: #fff;
+  text-align: center;
 }
 
-.set-close p:first-child {
+.set-close-kicker {
   margin: 0;
   color: #00afff;
   font-size: 14px;
@@ -190,10 +240,10 @@
   text-transform: uppercase;
 }
 
-.set-close h2 {
+.set-close-title {
   max-width: 12ch;
-  margin: 12px 0 0;
-  font-size: clamp(56px, 8vw, 96px);
+  margin: 12px auto 0;
+  font-size: clamp(56px, 8vw, 108px);
   font-stretch: 150%;
   font-weight: 700;
   line-height: 0.84;
@@ -202,6 +252,8 @@
 
 .set-close p {
   max-width: 62ch;
+  margin-right: auto;
+  margin-left: auto;
   font-family: var(--font-ui);
   font-size: 18px;
   font-stretch: 100%;
@@ -226,27 +278,37 @@
 }
 
 @media (max-width: 800px) {
-  .set-hero,
-  .set-index,
-  .set-game {
-    width: calc(100% - 40px);
-  }
-
   .set-hero {
-    padding-top: 112px;
+    min-height: 88vh;
+    padding: 112px 20px 48px;
   }
 
-  .set-photo img {
+  .set-intro-band {
+    padding: 64px 20px;
+  }
+
+  .set-index {
+    padding: 56px 20px;
+  }
+
+  .set-index ol,
+  .set-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .set-game.is-flip .set-photos {
+    order: 0;
+  }
+
+  .set-index a {
+    min-height: 220px;
+  }
+
+  .set-photos img {
     height: 240px;
   }
 
   .set-game {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 48px 0;
-  }
-
-  .set-close {
-    padding: 56px 20px 64px;
+    padding: 48px 20px;
   }
 }
