@@ -1,0 +1,45 @@
+:root {
+  --navy: #000c3c;
+  --cyan: #00afff;
+  --ink: #000c3c;
+  --pill: rgba(246, 246, 246, 0.78);
+  --font-display: "Sequel Sans", "Anybody", "Arial Narrow", Impact, sans-serif;
+  --font-ui: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --nav-height: 96px;
+  --page-pad: 40px;
+  --max: 1100px;
+}
+
+body {
+  min-height: 100vh;
+  color: #fff;
+  background: var(--navy);
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.35;
+  -webkit-font-smoothing: antialiased;
+}
+
+body:not(.appear) {
+  display: none;
+}
+
+main.error {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 180px);
+  text-align: center;
+}
+
+main.error h1 {
+  font-size: clamp(64px, 12vw, 120px);
+  font-stretch: 150%;
+  letter-spacing: 0.04em;
+}
+
+main.error a {
+  color: #00afff;
+}

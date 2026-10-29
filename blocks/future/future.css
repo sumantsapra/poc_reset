@@ -1,0 +1,128 @@
+.future-container {
+  padding: 0;
+  background: #f6f6f6;
+  color: #000c3c;
+}
+
+.future-container > div {
+  max-width: none;
+}
+
+.future-hero,
+.future-more {
+  width: min(1100px, calc(100% - 80px));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.future-hero {
+  padding-top: 150px;
+  padding-bottom: 72px;
+}
+
+.future-photo img {
+  display: block;
+  width: 100%;
+  height: 360px;
+  margin-bottom: 28px;
+  object-fit: cover;
+}
+
+.future-title {
+  max-width: 8ch;
+  margin: 0;
+  font-size: clamp(72px, 12vw, 140px);
+  font-stretch: 150%;
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.future-line {
+  max-width: 18ch;
+  margin: 28px 0 0;
+  font-size: clamp(28px, 3vw, 40px);
+  font-stretch: 150%;
+  font-weight: 700;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.future-ask {
+  margin: 18px 0 0;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-stretch: 125%;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.future-body,
+.future-how {
+  max-width: 68ch;
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-stretch: 100%;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.future-how {
+  color: #000c3c;
+}
+
+.future-cta,
+.future-read {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 22px;
+  border-radius: 30px;
+  background: #00afff;
+  color: #fff;
+  font-stretch: 150%;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.future-more {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 28px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: none;
+  margin-top: 12px;
+  padding: 36px max(40px, calc((100% - 1100px) / 2));
+  background: #000c3c;
+  color: #fff;
+}
+
+.future-more p {
+  max-width: 28ch;
+  margin: 0;
+  font-size: clamp(22px, 3vw, 32px);
+  font-stretch: 150%;
+  font-weight: 700;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+@media (max-width: 800px) {
+  .future-hero {
+    width: calc(100% - 40px);
+    padding-top: 112px;
+  }
+
+  .future-photo img {
+    height: 220px;
+  }
+
+  .future-more {
+    padding: 28px 20px 36px;
+  }
+}

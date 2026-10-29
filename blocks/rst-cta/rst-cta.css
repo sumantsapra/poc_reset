@@ -1,4 +1,4 @@
-.cta-container {
+.rst-cta-container {
   position: relative;
   padding-top: 28px;
   padding-bottom: 120px;
@@ -7,7 +7,7 @@
     url("/media/hero-bg.png") center / cover no-repeat;
 }
 
-.cta-container::after {
+.rst-cta-container::after {
   content: "";
   position: absolute;
   right: 0;
@@ -26,7 +26,7 @@
   text-align: center;
 }
 
-.cta h2 {
+.rst-cta h2 {
   color: var(--lime);
   font-size: 26px;
   font-stretch: 125%;
@@ -44,12 +44,12 @@
   letter-spacing: -0.04em;
 }
 
-.cta .button-wrapper {
+.rst-cta .button-wrapper {
   margin-top: 28px;
 }
 
 @media (max-width: 700px) {
-  .cta h2,
+  .rst-cta h2,
   .cta-inner > p:not(.button-wrapper) {
     font-size: 20px;
   }

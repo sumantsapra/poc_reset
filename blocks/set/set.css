@@ -1,0 +1,252 @@
+.set-container {
+  padding: 0;
+  background: #f6f6f6;
+  color: #000c3c;
+}
+
+.set-container > div {
+  max-width: none;
+}
+
+.set-hero,
+.set-index,
+.set-game,
+.set-close {
+  width: min(1200px, calc(100% - 80px));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.set-hero {
+  padding-top: 150px;
+}
+
+.set-photo img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.set-title {
+  max-width: 8ch;
+  margin: 28px 0 0;
+  font-size: clamp(72px, 11vw, 120px);
+  font-stretch: 150%;
+  font-weight: 700;
+  line-height: 0.82;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.set-line {
+  max-width: 16ch;
+  margin: 28px 0 0;
+  font-size: clamp(32px, 4vw, 48px);
+  font-stretch: 150%;
+  font-weight: 700;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.set-kicker {
+  margin: 18px 0 0;
+  font-size: 16px;
+  font-stretch: 125%;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.set-intro {
+  max-width: 68ch;
+  margin: 16px 0 0;
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-stretch: 100%;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.set-index {
+  margin-top: 72px;
+}
+
+.set-index-label {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-stretch: 125%;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.set-index ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.set-index a {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 16px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-top: 1px solid rgba(0, 12, 60, 0.18);
+  color: inherit;
+  font-size: clamp(22px, 3vw, 36px);
+  font-stretch: 150%;
+  font-weight: 700;
+  line-height: 0.95;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.set-index li:last-child a {
+  border-bottom: 1px solid rgba(0, 12, 60, 0.18);
+}
+
+.set-index a span:first-child {
+  color: #00afff;
+  font-size: 40px;
+}
+
+.set-game {
+  scroll-margin-top: 120px;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.85fr) 1.15fr;
+  gap: 36px;
+  align-items: start;
+  padding: 72px 0;
+  border-top: 1px solid rgba(0, 12, 60, 0.18);
+}
+
+.set-label {
+  margin: 0;
+  color: #00afff;
+  font-size: 14px;
+  font-stretch: 125%;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.set-game-title {
+  margin: 10px 0 0;
+  font-size: clamp(32px, 4vw, 52px);
+  font-stretch: 150%;
+  font-weight: 700;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.set-body {
+  margin: 16px 0 0;
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-stretch: 100%;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.set-move {
+  margin: 28px 0 0;
+  padding: 22px 24px;
+  background: #000c3c;
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-stretch: 100%;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.set-move span {
+  display: block;
+  margin-bottom: 8px;
+  color: #00afff;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-stretch: 125%;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.set-close {
+  width: 100%;
+  max-width: none;
+  margin-top: 12px;
+  padding: 88px max(40px, calc((100% - 1200px) / 2)) 96px;
+  background: #000c3c;
+  color: #fff;
+}
+
+.set-close p:first-child {
+  margin: 0;
+  color: #00afff;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.set-close h2 {
+  max-width: 12ch;
+  margin: 12px 0 0;
+  font-size: clamp(56px, 8vw, 96px);
+  font-stretch: 150%;
+  font-weight: 700;
+  line-height: 0.84;
+  text-transform: uppercase;
+}
+
+.set-close p {
+  max-width: 62ch;
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-stretch: 100%;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.set-more {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  margin-top: 12px;
+  padding: 0 22px;
+  border-radius: 30px;
+  background: #00afff;
+  color: #fff;
+  font-stretch: 150%;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media (max-width: 800px) {
+  .set-hero,
+  .set-index,
+  .set-game {
+    width: calc(100% - 40px);
+  }
+
+  .set-hero {
+    padding-top: 112px;
+  }
+
+  .set-photo img {
+    height: 240px;
+  }
+
+  .set-game {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 48px 0;
+  }
+
+  .set-close {
+    padding: 56px 20px 64px;
+  }
+}

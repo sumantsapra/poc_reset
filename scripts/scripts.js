@@ -65,13 +65,24 @@ export function decorateMain(main) {
   decorateButtons(main);
 }
 
+const THEMES = ['ao-exchange', 'reset', 'champions-set', 'future-champions'];
+
+function siteTheme() {
+  const [first] = window.location.pathname.split('/').filter(Boolean);
+  return THEMES.includes(first) ? first : 'hub';
+}
+
 /**
  * Loads everything needed for the first view.
  * @param {Document} doc The document
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
+  const theme = siteTheme();
+  document.body.dataset.theme = theme;
+  document.body.classList.add(`theme-${theme}`);
   decorateTemplateAndTheme();
+  await loadCSS(`${window.hlx.codeBasePath}/styles/${theme}.css`);
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);

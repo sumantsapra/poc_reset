@@ -1,0 +1,52 @@
+.hub-container {
+  padding: 0;
+}
+
+.hub-container > div {
+  max-width: none;
+}
+
+.hub-sheet {
+  width: min(1100px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 160px 0 96px;
+}
+
+.hub-title {
+  margin: 0 0 28px;
+  font-size: clamp(48px, 7vw, 84px);
+  font-stretch: 150%;
+  font-weight: 700;
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+
+.hub-list a {
+  display: flex;
+  align-items: center;
+  min-height: 88px;
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+  font-size: clamp(28px, 4vw, 48px);
+  font-stretch: 150%;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.hub-list a:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.hub-list a:hover {
+  color: #00afff;
+}
+
+@media (max-width: 800px) {
+  .hub-sheet {
+    width: calc(100% - 40px);
+    padding-top: 120px;
+  }
+}

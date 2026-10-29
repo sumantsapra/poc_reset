@@ -50,5 +50,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, '127.0.0.1', () => {
-  process.stdout.write(`Find your play preview at http://127.0.0.1:${port}\n`);
+  process.stdout.write(`Tennis Partner preview at http://127.0.0.1:${port}\n`);
 });

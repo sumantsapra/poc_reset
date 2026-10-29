@@ -1,14 +1,15 @@
-# Find your play
+# Tennis Partner
 
-Adobe Edge Delivery Services rebuild of [tennispartner.com.au/reset](https://tennispartner.com.au/reset).
+One Edge Delivery project for the four Tennis Partner microsites. Each site keeps its own pages and stylesheet. The URL path picks the theme.
 
-Pages:
+| Site | Path |
+| --- | --- |
+| AO Exchange | `/ao-exchange`, `/ao-exchange/agenda`, `/ao-exchange/speakers` |
+| Find your play | `/reset`, `/reset/agenda`, `/reset/speakers` |
+| The Champion's Set | `/champions-set` |
+| Future Champions | `/future-champions`, `/future-champions/how-does-it-work` |
 
-- `/` prize draw (Typeform `wcPNpVJ2`) and the six brand cards. Contact us opens `newpartnerships@tennis.com.au`.
-- `/agenda` the AO Exchange programme for 21 January 2027.
-- `/speakers` headline and featured speakers.
-
-Navigation stays on this site. Register now returns to the prize form on the home page.
+`/` is a short index of the four sites. AO Exchange registration stays at `/ao-exchange#form`. The Reset prize form stays at `/reset#form` and still opens the Typeform `wcPNpVJ2`. Future Champions nominations open `https://0dtcfr6wi77.typeform.com/futurechampion`. Questions go to `futurechampions@tennis.com.au`.
 
 ## Preview locally
 
@@ -16,21 +17,29 @@ Navigation stays on this site. Register now returns to the prize form on the hom
 npm run preview
 ```
 
-Open http://127.0.0.1:3000. `index.html` is only for this local preview. Once the code bus is live, the page body comes from Document Authoring.
+Open http://127.0.0.1:3000 and visit each path above. These `index.html` files are only for local preview. Once the code bus is live, the page body comes from Document Authoring. Paste the matching file from `content/` into each document.
 
 ## Deploy
 
-Use the same GitHub account that hosts AO Exchange. That account can install the AEM Code Sync app. The repository name must be `reset` (lowercase, no underscores). An underscore makes the preview hostname invalid.
+This is the existing Reset code bus. The preview host is `https://main--poc-reset--sumantsapra.aem.page` (the GitHub repo name uses an underscore, which the preview hostname cannot). Push `main` on that repository. Do not create a second project.
 
-1. Create a GitHub repository named `reset`.
-2. Push this project to `main`.
-3. Install [AEM Code Sync](https://github.com/apps/aem-code-sync/installations/new) on that account only, limited to this repository. Leave the content step empty if the wizard asks.
-4. Confirm the code bus: `https://main--reset--OWNER.aem.page/scripts/aem.js` should return JavaScript. `OWNER` is the GitHub account name, in lowercase.
-5. Open `https://main--reset--OWNER.aem.page/`. The first view is the Document Authoring starter page. Replace the home document with `content/home.html`, set the title to **Find your play** and the description to the line in `head.html`, then Preview. Create `agenda` and `speakers` documents from `content/agenda.html` and `content/speakers.html` and Preview those too.
-6. Publish when the preview looks right. The live host is `https://main--reset--OWNER.aem.live/`.
+After the push, create or replace these Document Authoring documents and set each title from the matching local page:
 
-Images in `/media` are served from this repository. The page references them as `/media/...`.
+- `/` from `content/index.html` — Tennis Partner
+- `/ao-exchange` from `content/ao-exchange.html` — AO Exchange
+- `/ao-exchange/agenda` from `content/ao-exchange/agenda.html`
+- `/ao-exchange/speakers` from `content/ao-exchange/speakers.html`
+- `/reset` from `content/reset.html` — Find your play
+- `/reset/agenda` from `content/reset/agenda.html`
+- `/reset/speakers` from `content/reset/speakers.html`
+- `/champions-set` from `content/champions-set.html` — The Champion's Set
+- `/future-champions` from `content/future-champions.html` — Future Champions
+- `/future-champions/how-does-it-work` from `content/future-champions/how-does-it-work.html`
+
+Preview each path, then publish. Map `tennispartner.com.au` to this one site so the root-relative links resolve.
+
+Images in `/media` are served from this repository.
 
 ## Fonts
 
-The Framer site uses Sequel 100 Wide, which is licensed. This project uses [Anybody](https://fonts.google.com/specimen/Anybody) until the woff2 files are added. See the comment in `styles/fonts.css`.
+The Framer sites use Sequel 100 Wide, which is licensed. This project uses [Anybody](https://fonts.google.com/specimen/Anybody) until the woff2 files are added. See the comment in `styles/fonts.css`.

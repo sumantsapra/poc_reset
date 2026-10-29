@@ -75,6 +75,12 @@ header .nav-cta {
   text-transform: uppercase;
 }
 
+@media (min-width: 901px) {
+  header .nav-pill.is-compact .nav-links {
+    display: none;
+  }
+}
+
 header .nav-toggle {
   display: none;
   width: 44px;
